@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useGameStore } from '../stores/gameStore';
-
 const { gameState, startNewGame } = useGameStore();
+
 </script>
 
 <template>
@@ -26,9 +26,9 @@ const { gameState, startNewGame } = useGameStore();
           <h2 class="text-xl font-semibold mb-4">Player Stats</h2>
           <div class="space-y-2">
             <p>Health: {{ gameState.player.health }}/{{ gameState.player.maxHealth }}</p>
-            <p>Money: ${{ gameState.player.money }}</p>
-            <p>Endurance: {{ gameState.player.endurance }}/{{ gameState.player.maxEndurance }}</p>
-            <p>Level: {{ gameState.player.level }} (XP: {{ gameState.player.experience }})</p>
+            <p>Money: ${{ gameState.player.money }} (+{{ gameState.player.interest }})</p>
+            <p>Endurance: {{ gameState.player.endurance }}/{{ gameState.maxEndurance }}</p>
+            <p>Level: {{ gameState.player.level }} (XP: {{ gameState.player.experience }} / 200)</p>
           </div>
         </div>
 
